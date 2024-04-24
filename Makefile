@@ -3,7 +3,7 @@ CC = clang
 CFLAGS = -framework Cocoa
 
 # Define source files
-SOURCES = app.m RedSquareView.m WindowInitializer.m AppDelegateInitializer.m
+SOURCES = *.m
 
 # Define output executable
 OUTPUT = app

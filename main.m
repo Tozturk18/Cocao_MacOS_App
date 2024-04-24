@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
-#import "RedSquareView.h"
 #import "WindowInitializer.h"
 #import "AppDelegateInitializer.h"
+#import "RectView.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -15,11 +15,15 @@ int main(int argc, const char * argv[]) {
         // Initialize the window
         NSWindow *window = [WindowInitializer initializeWindow];
 
-        // Create the red square view
-        RedSquareView *redSquareView = [[RedSquareView alloc] initWithFrame:NSMakeRect(0, 0, 400, 300)]; // Set the frame size of the custom view
+        // Create a green rectangle view
+        RectView *greenRectView = [RectView rectViewWithRect:NSMakeRect(0, 0, 100, 100) color:[NSColor greenColor]];
+        // Add the green rectangle view to the content view of the window
+        [[window contentView] addSubview:greenRectView];
 
-        // Add the red square view to the content view of the window
-        [[window contentView] addSubview:redSquareView];
+        // Create a green rectangle view
+        RectView *redRectView = [RectView rectViewWithRect:NSMakeRect(50, 50, 100, 100) color:[NSColor redColor]];
+        // Add the green rectangle view to the content view of the window
+        [[window contentView] addSubview:redRectView];
         
         // Run the application
         [application run];
