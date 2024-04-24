@@ -3,6 +3,7 @@
 #import "AppDelegateInitializer.h"
 #import "RectView.h"
 #import "TextView.h"
+#import "ButtonView.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -26,8 +27,13 @@ int main(int argc, const char * argv[]) {
         // Add the green rectangle view to the content view of the window
         [[window contentView] addSubview:redRectView];
 
+        // Create a Text view
         TextView *textView = [TextView textViewWithString:@"Hello, World!" rect:NSMakeRect(0, 0, 200, 100) font:[NSFont systemFontOfSize:24] textColor:[NSColor whiteColor] backgroundColor:[NSColor blueColor]];
         [[window contentView] addSubview:textView];
+
+        // Create a button view
+        ButtonView *buttonView = [ButtonView buttonViewWithTitle:@"Click Me" rect:NSMakeRect(0, 0, 100, 50) backgroundColor:[NSColor purpleColor] titleColor:[NSColor whiteColor]];
+        [[window contentView] addSubview:buttonView];
         
         // Run the application
         [application run];
