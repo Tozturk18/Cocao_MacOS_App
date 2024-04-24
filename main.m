@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
         [application setDelegate:appDelegate];
 
         // Initialize the window
-        NSWindow *window = [WindowInitializer initializeWindow];
+        NSWindow *window = [WindowInitializer initializeWindowWithRect:NSMakeRect(0, 0, 400, 300) title:@"Hello, World2!"];
 
         // Create a green rectangle view
         RectView *greenRectView = [RectView rectViewWithRect:NSMakeRect(0, 0, 100, 100) color:[NSColor greenColor]];
@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
         [[window contentView] addSubview:textView];
 
         // Create a button view
-        ButtonView *buttonView = [ButtonView buttonViewWithTitle:@"Click Me" rect:NSMakeRect(0, 0, 100, 50) backgroundColor:[NSColor purpleColor] titleColor:[NSColor whiteColor]];
+        ButtonView *buttonView = [ButtonView buttonViewWithTitle:@"Click Me" rect:NSMakeRect(100, 100, 100, 50) backgroundColor:[NSColor purpleColor] titleColor:[NSColor whiteColor]];
         [[window contentView] addSubview:buttonView];
         
         // Run the application
