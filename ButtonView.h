@@ -1,9 +1,5 @@
 #import <Cocoa/Cocoa.h>
 
-@protocol ButtonActionHandler <NSObject>
-- (void)generateRandomRectangleForWindow:(NSWindow *)window;
-@end
-
 @interface ButtonView : NSButton
 
 /* MARK: - Properties */
