@@ -13,7 +13,5 @@ jobs:
 
     steps:
       - name: Build
-        env:
-          scheme: ${{ 'default' }}
         run: |
           clang -o app -framework Cocoa *.m
