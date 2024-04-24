@@ -2,6 +2,6 @@
 
 @interface WindowInitializer : NSObject
 
-+ (NSWindow*)initializeWindow;
++ (NSWindow*)initializeWindowWithRect:(NSRect)rect title:(NSString*)title;
 
 @end

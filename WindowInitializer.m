@@ -2,18 +2,18 @@
 
 @implementation WindowInitializer
 
-+ (NSWindow*)initializeWindow {
++ (NSWindow*)initializeWindowWithRect:(NSRect)rect title:(NSString*)title {
     // Create the window frame
-    NSRect frame = NSMakeRect(0, 0, 400, 300); // Sets the origin and size of the window
+    //NSRect frame = NSMakeRect(0, 0, 400, 300); // Sets the origin and size of the window
 
     // Create the window
-    NSWindow *window = [[NSWindow alloc] initWithContentRect:frame
+    NSWindow *window = [[NSWindow alloc] initWithContentRect:rect
                             styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable
                             backing:NSBackingStoreBuffered
                             defer:NO];
 
     // Set the window title
-    [window setTitle:@"Hello World!"];
+    [window setTitle:title];
     // Add the window to the application
     [NSApp setWindowsMenu:[[[NSMenu alloc] init] autorelease]];
     [NSApp setMainMenu:[[[NSMenu alloc] init] autorelease]];
@@ -21,7 +21,7 @@
     [window makeKeyAndOrderFront:nil];
 
     // Create the view
-    NSView *contentView = [[NSView alloc] initWithFrame:frame];
+    NSView *contentView = [[NSView alloc] initWithFrame:rect];
     [window setContentView:contentView];
 
     // Create the menu bar
