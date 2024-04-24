@@ -23,8 +23,8 @@ int main(int argc, const char * argv[]) {
         
         // Create a button view
         ButtonView *buttonView = [ButtonView buttonViewWithTitle:@"Click Me" rect:NSMakeRect(150, 125, 100, 50) backgroundColor:[NSColor redColor] titleColor:[NSColor whiteColor]];
-        [buttonView setTarget:actionHandler]; // Set the instance of ButtonActionHandler as the target
-        [buttonView setAction:@selector(buttonClicked:)];
+
+        [buttonView setTarget:actionHandler action:@selector(generateRandomRectangleForWindow:) withObject:window];
         [buttonView setEnabled:YES]; // Enable the button
         [[window contentView] addSubview:buttonView];
         

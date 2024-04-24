@@ -5,4 +5,6 @@
 
 - (void)buttonClicked:(id)sender;
 
+- (void)generateRandomRectangleForWindow:(NSWindow *)window;
+
 @end

@@ -45,6 +45,12 @@
     }
 }
 
+- (void)setTarget:(id)button_target action:(SEL)button_action withObject:(NSObject *)object; {
+    self.button_target = button_target;
+    self.button_action = button_action;
+    self.object = object;
+}
+
 - (void)mouseDown:(NSEvent *)event {
     // Change background color when the button is clicked
     self.backgroundColor = [NSColor blueColor]; // Set the desired color
@@ -52,9 +58,14 @@
     
     // Redraw the button
     [self setNeedsDisplay:YES];
+
+    // Call the target-action method
+    if (self.button_target && self.button_action && [self.button_target respondsToSelector:self.button_action]) {
+        [self.button_target performSelector:self.button_action withObject:self.object];
+    }
     
     // Call the super method to handle the default behavior
-    [super mouseDown:event];
+    //[super mouseDown:event];
 }
 
 - (void)mouseUp:(NSEvent *)event {
@@ -69,10 +80,24 @@
     [super mouseUp:event];
 }
 
+- (void)updateCursorForMouseEntered:(BOOL)entered {
+    if (entered) {
+        // Set cursor to pointing hand when mouse enters
+        NSCursor *pointingHandCursor = [NSCursor pointingHandCursor];
+        [pointingHandCursor set];
+    } else {
+        // Reset cursor to arrow when mouse exits
+        [[NSCursor arrowCursor] set];
+    }
+}
+
 - (void)mouseEntered:(NSEvent *)event {
     // Change background color when mouse enters the button
     self.backgroundColor = [NSColor purpleColor]; // Set the desired hover color
     self.title = @"Mouse entered!";
+
+    // Update cursor to pointing hand
+    [self updateCursorForMouseEntered:YES];
 
     // Redraw the button
     [self setNeedsDisplay:YES];
@@ -85,8 +110,11 @@
     // Reset the background color when mouse exits the button
     self.backgroundColor = [NSColor redColor]; // Set the initial color
     self.title = @"Click Me!";
+
+    // Update cursor to arrow
+    [self updateCursorForMouseEntered:NO];
     
-        // Redraw the button
+    // Redraw the button
     [self setNeedsDisplay:YES];
     
     // Call the super method to handle the default behavior

@@ -1,5 +1,9 @@
 #import <Cocoa/Cocoa.h>
 
+@protocol ButtonActionHandler <NSObject>
+- (void)generateRandomRectangleForWindow:(NSWindow *)window;
+@end
+
 @interface ButtonView : NSButton
 
 /* MARK: - Properties */
@@ -17,9 +21,18 @@
 @property (nonatomic, strong)   NSColor     *hoverBorderColor;          // Hover border color of the button
 @property (nonatomic, assign)   CGFloat     borderWidth;                // Border width of the button
 
+@property (nonatomic, assign)   id          button_target;              // Target of the button
+@property (nonatomic, assign)   SEL         button_action;              // Action of the button
+@property (nonatomic, assign)   NSObject    *object;                    // Object to pass to button action
+
+//@property (nonatomic, weak) id<ButtonActionHandler> actionHandler;
+
+
 /* MARK: - Methods */
 // Private Constructor
 - (instancetype)initWithTitle:(NSString *)title rect:(NSRect)rect backgroundColor:(NSColor *)backgroundColor titleColor:(NSColor *)titleColor;
+
+- (void)setTarget:(id)button_target action:(SEL)button_action withObject:(NSObject *)object;
 
 // Initialize the button with title, rect, background color, and title color
 + (instancetype)buttonViewWithTitle:(NSString *)title rect:(NSRect)rect backgroundColor:(NSColor *)backgroundColor titleColor:(NSColor *)titleColor;
