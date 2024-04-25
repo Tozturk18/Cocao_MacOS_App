@@ -7,4 +7,6 @@
 
 - (void)generateRandomRectangleForWindow:(NSWindow *)window;
 
+- (void)generateRandomCircleForWindow:(NSWindow *)window;
+
 @end
