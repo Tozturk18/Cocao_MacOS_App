@@ -55,6 +55,9 @@
     // Change background color when the button is clicked
     self.backgroundColor = [NSColor blueColor]; // Set the desired color
     self.title = @"Clicked!";
+
+    // Update cursor to pointing hand
+    [self updateCursorForMouseEntered:YES];
     
     // Redraw the button
     [self setNeedsDisplay:YES];
@@ -72,6 +75,9 @@
     // Reset the background color when the mouse button is released
     self.backgroundColor = [NSColor redColor]; // Set the initial color
     self.title = @"Click Me!";
+
+    // Update cursor to pointing hand
+    [self updateCursorForMouseEntered:YES];
     
     // Redraw the button
     [self setNeedsDisplay:YES];
