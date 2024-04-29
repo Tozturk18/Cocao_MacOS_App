@@ -11,4 +11,6 @@
 
 - (void)generateRandomPolygonForWindow:(NSWindow *)window;
 
+- (void)generateRandomShapeForWindow:(NSWindow *)window;
+
 @end
