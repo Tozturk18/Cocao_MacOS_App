@@ -3,7 +3,7 @@ CC = clang
 CFLAGS = -framework Cocoa
 
 # Define source files
-SOURCES = *.m
+SOURCES = main.m ./helpers/*/*.m
 
 # Define output executable
 OUTPUT = app
