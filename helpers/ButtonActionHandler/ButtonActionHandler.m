@@ -1,9 +1,9 @@
 #import "ButtonActionHandler.h"
-#import "RectView.h"
-#import "CircleView.h"
-#import "PolygonView.h"
-#import "ShapeView.h"
-#import "Vector2.h"
+#import "../RectView/RectView.h"
+#import "../CircleView/CircleView.h"
+#import "../PolygonView/PolygonView.h"
+#import "../ShapeView/ShapeView.h"
+#import "../Vector2/Vector2.h"
 
 @implementation ButtonActionHandler
 
@@ -148,7 +148,6 @@
     for (NSInteger i = 0; i < randomVertices; i++) {
         CGFloat randomVertexX = randomX + arc4random_uniform(randomSize);
         CGFloat randomVertexY = randomY + arc4random_uniform(randomSize);
-        NSLog(@"Random Vertex %ld: (X:%f, Y:%f)", i, randomVertexX, randomVertexY);
         NSValue *vertexValue = [NSValue valueWithPoint:NSMakePoint(randomVertexX, randomVertexY)];
         [verticesArray addObject:vertexValue];
     }

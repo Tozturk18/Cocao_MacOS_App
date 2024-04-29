@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "Vector2.h"
+#import "../Vector2/Vector2.h"
 
 @interface ShapeView : NSView
 
