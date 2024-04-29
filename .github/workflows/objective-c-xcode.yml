@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v3
       - name: Build
         run: |
-          clang -o app -framework Cocoa *.m
+          clang -o app -framework Cocoa main.m ./helpers/*/*.m
