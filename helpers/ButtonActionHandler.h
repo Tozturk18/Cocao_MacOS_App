@@ -9,4 +9,6 @@
 
 - (void)generateRandomCircleForWindow:(NSWindow *)window;
 
+- (void)generateRandomPolygonForWindow:(NSWindow *)window;
+
 @end
