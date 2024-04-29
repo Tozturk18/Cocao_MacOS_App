@@ -1,10 +1,10 @@
 #import <Cocoa/Cocoa.h>
-#import "WindowInitializer.h"
-#import "AppDelegateInitializer.h"
-#import "RectView.h"
-#import "TextView.h"
-#import "ButtonView.h"
-#import "ButtonActionHandler.h"
+#import "helpers/WindowInitializer.h"
+#import "helpers/AppDelegateInitializer.h"
+#import "helpers/RectView.h"
+#import "helpers/TextView.h"
+#import "helpers/ButtonView.h"
+#import "helpers/ButtonActionHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
