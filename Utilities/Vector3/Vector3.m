@@ -8,7 +8,7 @@
  * @version 0.1
  * @date 2024-04-29
  * 
- * @copyright MIT (c) 2024
+ * @copyright MIT Copyright (c) 2024
  * 
  */
 
@@ -29,3 +29,5 @@
 + (instancetype)vector3WithX:(CGFloat)x y:(CGFloat)y z:(CGFloat)z {
     return [[Vector3 alloc] initWithX:x y:y z:z];
 }
+
+@end

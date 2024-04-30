@@ -1,12 +1,12 @@
 #import <Cocoa/Cocoa.h>
-#import "helpers/WindowInitializer/WindowInitializer.h"
-#import "helpers/AppDelegateInitializer/AppDelegateInitializer.h"
-#import "helpers/RectView/RectView.h"
-#import "helpers/TextView/TextView.h"
-#import "helpers/ButtonView/ButtonView.h"
-#import "helpers/ButtonActionHandler/ButtonActionHandler.h"
-#import "helpers/Vector2/Vector2.h"
-#import "helpers/ShapeView/ShapeView.h"
+#import "Utilities/WindowInitializer/WindowInitializer.h"
+#import "Utilities/AppDelegateInitializer/AppDelegateInitializer.h"
+#import "Utilities/RectView/RectView.h"
+#import "Utilities/TextView/TextView.h"
+#import "Utilities/ButtonView/ButtonView.h"
+#import "Utilities/ButtonActionHandler/ButtonActionHandler.h"
+#import "Utilities/Vector2/Vector2.h"
+#import "Utilities/ShapeView/ShapeView.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
