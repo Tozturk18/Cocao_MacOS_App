@@ -2,7 +2,7 @@
 
 @implementation Vector2
 
-- (instancetype)initWithX:(CGFloat)x y:(CGFloat)y {
+- (instancetype)initWithX:(CGFloat)x Y:(CGFloat)y {
     self = [super init];
     if (self) {
         _x = x;
@@ -11,11 +11,15 @@
     return self;
 }
 
++ (instancetype)vector2WithX:(CGFloat)x Y:(CGFloat)y {
+    return [[Vector2 alloc] initWithX:x Y:y];
+}
+
 + (NSArray<Vector2 *> *)verticesFromArray:(NSArray<NSValue *> *)array {
     NSMutableArray<Vector2 *> *vertices = [NSMutableArray arrayWithCapacity:array.count];
     for (NSValue *value in array) {
         CGPoint point = [value pointValue];
-        Vector2 *vertex = [[Vector2 alloc] initWithX:point.x y:point.y];
+        Vector2 *vertex = [[Vector2 alloc] initWithX:point.x Y:point.y];
         [vertices addObject:vertex];
     }
     return [vertices copy];

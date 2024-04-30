@@ -1,0 +1,31 @@
+/**
+ * @file LineView.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-04-29
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
+#import <Cocoa/Cocoa.h>
+#import "../Vector2/Vector2.h"
+
+@interface LineView : NSView
+
+/* MARK: - Properties */
+@property (nonatomic, strong) Vector2 *startPoint;
+@property (nonatomic, strong) Vector2 *endPoint;
+@property (nonatomic, strong) NSColor *strokeColor;
+@property (nonatomic, assign) CGFloat strokeWidth;
+
+/* MARK: - Methods */
+- (instancetype)initWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
+
++ (instancetype)lineViewWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
++ (instancetype)lineViewWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint;
++ (instancetype)lineViewWithEndPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
++ (instancetype)lineViewWithEndPoint:(Vector2 *)endPoint;
+
+@end

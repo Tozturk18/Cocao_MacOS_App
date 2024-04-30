@@ -6,7 +6,7 @@
 #import "Utilities/ButtonView/ButtonView.h"
 #import "Utilities/ButtonActionHandler/ButtonActionHandler.h"
 #import "Utilities/Vector2/Vector2.h"
-#import "Utilities/ShapeView/ShapeView.h"
+#import "Utilities/LineView/LineView.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -22,14 +22,24 @@ int main(int argc, const char * argv[]) {
         
         
         // Create an instance of ButtonActionHandler
-        ButtonActionHandler *actionHandler = [[ButtonActionHandler alloc] init];
+        /*ButtonActionHandler *actionHandler = [[ButtonActionHandler alloc] init];
         
         // Create a button view
         ButtonView *buttonView = [ButtonView buttonViewWithTitle:@"Click Me" rect:NSMakeRect(150, 125, 100, 50) backgroundColor:[NSColor redColor] titleColor:[NSColor whiteColor]];
 
         [buttonView setTarget:actionHandler action:@selector(generateRandomShapeForWindow:) withObject:window];
         [buttonView setEnabled:YES]; // Enable the button
-        [[window contentView] addSubview:buttonView];
+        [[window contentView] addSubview:buttonView];*/
+
+        // Create two Vector2 points for start and end
+        //Vector2 *startPoint = [Vector2 vector2WithX:50 Y:50];
+        Vector2 *endPoint = [Vector2 vector2WithX:400 Y:300];
+        
+        // Create a LineView
+        LineView *lineView = [LineView lineViewWithEndPoint:endPoint];
+        
+        // Add the LineView to the window
+        [window.contentView addSubview:lineView];
 
         // Define the vertices of the irregular polygon
         /*NSArray<NSValue *> *verticesArray = @[
