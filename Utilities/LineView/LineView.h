@@ -26,6 +26,10 @@
 - (instancetype)initWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
 
 - (void)rotateLineViewWithAngle:(CGFloat)rotation aroundPoint:(Vector2 *)centerPoint;
+- (void)rotateLineViewWithAngle:(CGFloat)rotation;
+
+- (void)moveLineViewWithVector:(Vector2 *)vector;
+- (void)moveLineViewToVector:(Vector2 *)vector;
 
 + (instancetype)lineViewWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
 + (instancetype)lineViewWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint;

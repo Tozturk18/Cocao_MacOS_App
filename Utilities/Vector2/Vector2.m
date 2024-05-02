@@ -25,4 +25,12 @@
     return [vertices copy];
 }
 
+- (instancetype)add:(Vector2 *)vector {
+    return [[Vector2 alloc] initWithX:self.x + vector.x Y:self.y + vector.y];
+}
+
+- (instancetype)subtract:(Vector2 *)vector {
+    return [[Vector2 alloc] initWithX:self.x - vector.x Y:self.y - vector.y];
+}
+
 @end

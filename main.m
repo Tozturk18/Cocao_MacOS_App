@@ -18,8 +18,7 @@ int main(int argc, const char * argv[]) {
         [application setDelegate:appDelegate];
 
         // Initialize the window
-        NSWindow *window = [WindowInitializer initializeWindowWithRect:NSMakeRect(0, 0, 400, 300) title:@"Hello, World!"];
-        
+        NSWindow *window = [WindowInitializer initializeWindowWithRect:NSMakeRect(0, 0, 400, 400) title:@"Hello, World!"];
         
         // Create an instance of ButtonActionHandler
         /*ButtonActionHandler *actionHandler = [[ButtonActionHandler alloc] init];
@@ -33,38 +32,19 @@ int main(int argc, const char * argv[]) {
 
         // Create two Vector2 points for start and end
         //Vector2 *startPoint = [Vector2 vector2WithX:50 Y:50];
-        Vector2 *endPoint = [Vector2 vector2WithX:400 Y:300];
+        Vector2 *endPoint = [Vector2 vector2WithX:400 Y:400];
         
         // Create a LineView
         LineView *lineView = [LineView lineViewWithEndPoint:endPoint];
-        //lineView.rotation = 45.0; // Rotate the line by 45 degrees
 
-        
-
+        // Rotate the LineView by 45 degrees around the origin
         [lineView rotateLineViewWithAngle:45.0 aroundPoint:[Vector2 vector2WithX:0 Y:0]];
+
+        // Move the LineView to the point (50, 50)
+        [lineView moveLineViewToVector:[Vector2 vector2WithX:200 Y:200]]; 
         
         // Add the LineView to the window
         [window.contentView addSubview:lineView];
-
-        // Define the vertices of the irregular polygon
-        /*NSArray<NSValue *> *verticesArray = @[
-            [NSValue valueWithPoint:NSMakePoint(100, 100)],
-            [NSValue valueWithPoint:NSMakePoint(200, 150)],
-            [NSValue valueWithPoint:NSMakePoint(150, 250)],
-            [NSValue valueWithPoint:NSMakePoint(50, 200)]
-        ];
-
-        // Initialize Vector2 vertices from the array
-        NSArray<Vector2 *> *vertices = [Vector2 verticesFromArray:verticesArray];
-
-        // Create a ShapeView with the vertices
-        ShapeView *shapeView = [[ShapeView alloc] initWithVertices:vertices];
-        shapeView.fillColor = [NSColor blueColor]; // Set fill color
-        shapeView.strokeColor = [NSColor blackColor]; // Set stroke color
-        shapeView.strokeWidth = 2.0; // Set stroke width
-
-        // Add the ShapeView to the window's content view
-        [[window contentView] addSubview:shapeView];*/
         
         // Run the application
         [application run];

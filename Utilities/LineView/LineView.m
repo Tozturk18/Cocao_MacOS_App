@@ -74,5 +74,23 @@
     [self setNeedsDisplay:YES];
 }
 
+- (void)rotateLineViewWithAngle:(CGFloat)rotation {
+    [self rotateLineViewWithAngle:rotation aroundPoint:self.centerPoint];
+}
+
+- (void)moveLineViewWithVector:(Vector2 *)vector {
+    self.startPoint = [self.startPoint add:vector];
+    self.endPoint = [self.endPoint add:vector];
+    
+    [self setNeedsDisplay:YES];
+}
+
+- (void)moveLineViewToVector:(Vector2 *)vector  {
+
+    self.endPoint = [[self.endPoint add:vector] subtract:self.startPoint];
+    self.startPoint = vector;
+
+    [self setNeedsDisplay:YES];
+}
 
 @end
