@@ -37,6 +37,11 @@ int main(int argc, const char * argv[]) {
         
         // Create a LineView
         LineView *lineView = [LineView lineViewWithEndPoint:endPoint];
+        //lineView.rotation = 45.0; // Rotate the line by 45 degrees
+
+        
+
+        [lineView rotateLineViewWithAngle:45.0 aroundPoint:[Vector2 vector2WithX:0 Y:0]];
         
         // Add the LineView to the window
         [window.contentView addSubview:lineView];

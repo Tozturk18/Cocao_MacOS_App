@@ -9,6 +9,8 @@
         _endPoint = endPoint;
         _strokeColor = strokeColor;
         _strokeWidth = strokeWidth;
+        _rotation = 0.0; // Default rotation angle
+        _centerPoint = [Vector2 vector2WithX:NSMidX(self.bounds) Y:NSMidY(self.bounds)];
     }
     return self;
 }
@@ -43,6 +45,13 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
+
+    // Apply rotation transformation
+    NSAffineTransform *transform = [NSAffineTransform transform];
+    [transform translateXBy:self.centerPoint.x yBy:self.centerPoint.y];
+    [transform rotateByDegrees:self.rotation];
+    [transform translateXBy:-self.centerPoint.x yBy:-self.centerPoint.y];
+    [transform concat];
     
     // Draw the line
     NSBezierPath *linePath = [NSBezierPath bezierPath];
@@ -56,5 +65,14 @@
     // Draw the line
     [linePath stroke];
 }
+
+- (void)rotateLineViewWithAngle:(CGFloat)rotation aroundPoint:(Vector2 *)centerPoint {
+
+    self.rotation = rotation;
+    self.centerPoint = centerPoint;
+
+    [self setNeedsDisplay:YES];
+}
+
 
 @end

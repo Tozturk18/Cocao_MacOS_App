@@ -19,9 +19,13 @@
 @property (nonatomic, strong) Vector2 *endPoint;
 @property (nonatomic, strong) NSColor *strokeColor;
 @property (nonatomic, assign) CGFloat strokeWidth;
+@property (nonatomic, assign) CGFloat rotation; // Rotation angle in degrees
+@property (nonatomic, assign) Vector2 *centerPoint;
 
 /* MARK: - Methods */
 - (instancetype)initWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
+
+- (void)rotateLineViewWithAngle:(CGFloat)rotation aroundPoint:(Vector2 *)centerPoint;
 
 + (instancetype)lineViewWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint strokeColor:(NSColor *)strokeColor strokeWidth:(CGFloat)strokeWidth;
 + (instancetype)lineViewWithStartPoint:(Vector2 *)startPoint endPoint:(Vector2 *)endPoint;
