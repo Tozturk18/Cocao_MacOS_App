@@ -75,7 +75,7 @@
 }
 
 - (void)rotateLineViewWithAngle:(CGFloat)rotation {
-    [self rotateLineViewWithAngle:rotation aroundPoint:self.centerPoint];
+    [self rotateLineViewWithAngle:rotation aroundPoint:[Vector2 vector2WithX:NSMidX(self.bounds) Y:NSMidY(self.bounds)] ];
 }
 
 - (void)moveLineViewWithVector:(Vector2 *)vector {
